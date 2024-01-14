@@ -1,0 +1,8 @@
+INSERT into hotel (id,amount_of_stars,country,description,name,room_count) values ('7642a910-92a6-11ee-b9d1-0242ac120002','5','BARCELONA','Ideally situated in the Barcelona features air-conditioned rooms.','HILTON',90),
+                                                                       ('33c7f0f7-c6fb-4fe8-9b0f-556955353ac4','3','PARIS','Located in Paris, 200 metres from Paris Art Museum','SHERATON',100),
+                                                                       ('c247636a-9822-11ee-b9d1-0242ac120002','5','SAN_FRANCISCO','It is offers accommodation with swimming pool','MARIOTT',50),
+                                                                       ('3804694a-f8b3-4a8d-ad04-e18213377e56','2','LONDON','Strategically located in the heart of city','BURJ AL ARAB',60),
+                                                                       ('7e091901-311e-4724-9ab8-0ca728af7a60','5','PARIS','Located in the heart of the vibrant Orchard Road district','ATLANTIS',60),
+                                                                       ('f5db5c6e-d921-4b49-bc9e-9744871c9969','4','SAN_FRANCISCO','Ideally located in San-Francisco  offers air-conditioned rooms','PALAZZO',90),
+                                                                       ('b7a149bb-9e13-4b94-8c8e-68992463e2fb','2','BARCELONA','Hotel has a fitness centre, terrace, a restaurant and bar in Barcelona.','AMBASSADOR',50),
+                                                                      ('96bb5963-3254-4c8a-85bb-60c407b1b93b','7','BERLIN','Located in the Central Business District','PEKIN',80)

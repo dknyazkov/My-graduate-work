@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" th:action="@{/deep}">
+
+    <input type="date" value="@DateTime.Today.ToString("yyyy-MM-dd")" name="start"><br>
+    <input type="date" id="EndDate" value="@DateTime.Today.ToString("yyyy-MM-dd")" name="finish"><br>
+    <input type="text" name="location"><br>
+    <input type="submit" value="Login"><br>
+
+</form>
+</body>
+</html>
