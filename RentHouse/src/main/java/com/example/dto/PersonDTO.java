@@ -18,6 +18,7 @@ public class PersonDTO {
     private String email;
     private String phoneNumber;
     private PaymentCardDTO payment;
+    private String password;
     private List<ReservationEntity> reservations;
 
 

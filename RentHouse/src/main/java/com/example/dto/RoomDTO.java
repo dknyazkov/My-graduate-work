@@ -15,4 +15,5 @@ public class RoomDTO {
     private String name;
     private Double price;
     private HotelEntity hotel;
+    private Integer remain;
 }

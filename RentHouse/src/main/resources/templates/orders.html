@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
-
+	  <link rel="stylesheet" href="css/style_new.css">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     
@@ -31,33 +31,29 @@
     
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">dirEngine.</a>
+      <a class="navbar-brand" href="http://127.0.0.1:8080/index">Go travel</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="tour.html" class="nav-link">Tour</a></li>
-          <li class="nav-item active"><a href="hotel.html" class="nav-link">Hotels</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Add listing</span></a></li>
+			<li class="nav-item"><a href="http://127.0.0.1:8080/blog" class="nav-link">Home</a></li>
+			<li class="nav-item"><a href="http://127.0.0.1:8080/about" class="nav-link">About</a></li>
+			<li class="nav-item"><a href="http://127.0.0.1:8080/contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
     <!-- END nav -->
     
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/RoomBarcelona.jpeg');">
+    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_5.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="hotel.html">Hotel</a></span> <span>Hotel Single</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Our best room</h1>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Your orders</h1>
           </div>
         </div>
       </div>
@@ -146,6 +142,23 @@
 							</form>
         		</div>
           </div>
+			<div  class="each">
+				<ul>
+					<li th:each="item:${reservations}">
+						<td th:text="'Hotel name: '+${item.room.getHotel().name}"></td><br>
+						<td th:text="'Room name: '+${item.room.name}"></td><br>
+						<td th:text="'Price: '+${item.cost}"></td><br>
+						<a th:href="@{/order/delete(id=${item.id})}">cancel order</a><br><br><br><br>
+
+					</li>
+
+				</ul>
+			</div>
+			<div class="not_found"  th:if="${reservations.size()==0}">You don't have any orders</div>
+
+
+
+
           <div class="col-lg-9">
           	<div class="row">
           		<div class="col-md-12 ftco-animate">

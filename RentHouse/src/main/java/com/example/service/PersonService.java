@@ -9,4 +9,6 @@ public interface PersonService  {
     void savePerson(PersonDTO personDTO);
     PersonDTO findById(UUID id);
     void deleteById(UUID id);
+    UUID getPersonId();
+
 }

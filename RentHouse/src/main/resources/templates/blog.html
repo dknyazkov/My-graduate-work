@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
@@ -31,23 +31,24 @@
     
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="http://127.0.0.1:8080">dirEngine.</a>
+      <a class="navbar-brand" href="http://127.0.0.1:8080/index">Go to travel</a>
+
+        </form>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="http://127.0.0.1:8080" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="http://127.0.0.1:8080/about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="http://127.0.0.1:8080/tour" class="nav-link">Tour</a></li>
-          <li class="nav-item"><a href="http://127.0.0.1:8080/hotel" class="nav-link">Hotels</a></li>
           <li class="nav-item active"><a href="http://127.0.0.1:8080/blog" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="http://127.0.0.1:8080/contact" class="nav-link">Contact</a></li>
-          <li class="nav-item cta"><a href="http://127.0.0.1:8080/contact" class="nav-link"><span>Add listing</span></a></li>
+          <li class="nav-item cta"><a href="http://127.0.0.1:8080/orders" class="nav-link"><span>Your order</span></a></li>
         </ul>
       </div>
     </div>
+
   </nav>
     <!-- END nav -->
     
@@ -69,13 +70,13 @@
         <div class="row d-flex">
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="http://127.0.0.1:8080/blog-single" class="block-20" style="background-image: url('images/image_1.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<span class="tag">Tips, Travel</span>
                 <h3 class="heading mt-3"><a href="#">8 Best homestay in Philippines that you don't miss out</a></h3>
                 <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
+                  <div><a href="http://127.0.0.1:8080/blog-single">August 12, 2018</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
@@ -84,15 +85,13 @@
           </div>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="http://127.0.0.1:8080/blog-Barcelona" class="block-20" style="background-image: url('images/spain-barcelona-sagrada.jpg');">
               </a>
               <div class="text p-4">
               	<span class="tag">Culture</span>
-                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                <h3 class="heading mt-3"><a href="http://127.0.0.1:8080/blog-Barcelona">Barcelona: Vibrant and Spirited</a></h3>
                 <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><a href="#">August 12, 2023</a></div>
                 </div>
               </div>
             </div>
@@ -190,17 +189,7 @@
         </div>
         <div class="row mt-5">
           <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
+
           </div>
         </div>
       </div>

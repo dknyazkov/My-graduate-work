@@ -13,9 +13,11 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateReservationRequest {
-    private UUID personId;
-    public UUID roomId;
+    private Integer count;
+    private String email;
     private Date startOfDate;
     private Date finishOfDate;
+    private Double price;
+    private Integer numberOfRooms;
 }
 

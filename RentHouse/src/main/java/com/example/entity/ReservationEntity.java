@@ -1,9 +1,10 @@
 package com.example.entity;
 
-import com.example.Status;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -24,14 +25,18 @@ public class ReservationEntity {
     @JoinColumn(name = "person_id")
     private PersonEntity person;
     @ManyToOne
+    @JoinColumn(name = "room_id")
     private RoomEntity room;
+    private String email;
     private Date startOfDate;
     private Date finishOfDate;
     @Enumerated(EnumType.STRING)
-    private  Status status;
+    @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date created;
     private Integer countOfGuests;
+    private Double cost;
+    private Integer NumberOfRooms;
 
 
 }

@@ -1,6 +1,6 @@
 package com.example.entity;
 
-import com.example.TypeOfCard;
+import com.example.dto.TypeOfCard;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

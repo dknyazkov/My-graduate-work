@@ -1,5 +1,4 @@
 package com.example.dto;
-
 import com.example.Country;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,5 +18,7 @@ public class HotelDTO {
     private List<RoomDTO> rooms;
     private Integer amountOfStars;
     private Country country;
+    private Double price;
+
 
 }

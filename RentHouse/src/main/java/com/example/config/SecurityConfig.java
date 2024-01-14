@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 
@@ -21,32 +22,39 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/public").permitAll()
-                .antMatchers(HttpMethod.POST, "public").permitAll()
-                .antMatchers("/user").hasAnyAuthority("read", "write")
-                .antMatchers("/admin").hasAuthority("write")
-                .antMatchers("/private").authenticated()
+                .antMatchers("/blog").permitAll()
+                .antMatchers("/test").permitAll()
+                .antMatchers("/login").permitAll()
+                .antMatchers("/about").permitAll()
+                .antMatchers("/contact").permitAll()
+                .antMatchers("/error_page").permitAll()
+                .antMatchers(HttpMethod.POST, "login").permitAll()
+                .antMatchers("/result").authenticated()
+                .antMatchers("/orders").authenticated()
+                .antMatchers("/index").authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/public")
+                .loginPage("/login")
                 .loginProcessingUrl("/myLogin")
-                .usernameParameter("userlogin")
-                .passwordParameter("userpass")
+                .usernameParameter("username")
+                .passwordParameter("password")
                 .successHandler((request, response, authentication) -> {
-                    response.sendRedirect("/private");
+                    response.sendRedirect("/index");
                 })
                 .failureHandler((request, response, exception) -> {
-                    response.sendRedirect(("/public"));
+                    response.sendRedirect(("/error_page"));
                 }).permitAll()
                 .and()
                 .logout()
                 .logoutUrl("/logout")
                 .logoutSuccessHandler((request, response, authentication) -> {
                     request.getSession().invalidate();
-                    response.sendRedirect("/public");
+                    response.sendRedirect("/blog");
                 })
                 .and();
+
     }
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder builder) throws Exception {
